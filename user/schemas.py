@@ -7,6 +7,9 @@ class UserRegister(BaseModel):
     email : str
     password : str
 
+class AdminCreate(UserRegister):
+    pass
+
 class UserLogin(UserRegister):
      pass
 

@@ -7,4 +7,6 @@ class User(Base):
     id = Column(Integer,Identity(start=1, increment=1), primary_key=True,)
     email = Column(String,unique=True)
     password = Column(String)
+    # name = Column(String)
+    role = Column(String,default="user")
 
