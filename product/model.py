@@ -1,7 +1,7 @@
 
 from sqlalchemy import Column, Identity,Integer,String,Float,DateTime
 from datetime import datetime
-from database.base import Base
+from core.base import Base
 
 class Product(Base):
     __tablename__ = "products"

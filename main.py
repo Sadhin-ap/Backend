@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from user.route import router as user_router
-from database.base import Base
-from database.session import engine
+from core.base import Base
+from core.session import engine
 
 
 app = FastAPI(title="E-commerce API")

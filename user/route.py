@@ -1,8 +1,8 @@
 import logging
 from fastapi import APIRouter,Depends,HTTPException
 from sqlalchemy.orm import Session
-from database import session
-from database.session import SessionLocal
+from core import session
+from core.session import SessionLocal, get_db
 from user.schemas import UserRegister
 from user.crud import create_user,authenticate_user
 from user.auth import create_access_token
@@ -11,12 +11,6 @@ from user.auth import create_access_token
 
 router = APIRouter()
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.post("/register")
 def register(data: UserRegister ,db:Session = Depends(get_db)):
