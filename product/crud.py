@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from backend.product.model import Product
+from product.model import Product
 
 
 def create_product(db:Session,data):
